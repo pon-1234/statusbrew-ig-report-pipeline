@@ -1,0 +1,55 @@
+from google.cloud import bigquery
+
+PROFILE_DAILY_SCHEMA = [
+    bigquery.SchemaField("date", "DATE"),
+    bigquery.SchemaField("space_id", "STRING"),
+    bigquery.SchemaField("profile_id", "STRING"),
+    bigquery.SchemaField("profile_username", "STRING"),
+    bigquery.SchemaField("platform", "STRING"),
+    bigquery.SchemaField("followers", "INT64"),
+    bigquery.SchemaField("followers_gained", "INT64"),
+    bigquery.SchemaField("unfollowers", "INT64"),
+    bigquery.SchemaField("actual_growth", "INT64"),
+    bigquery.SchemaField("reach_total", "INT64"),
+    bigquery.SchemaField("reach_organic", "INT64"),
+    bigquery.SchemaField("reach_paid", "INT64"),
+    bigquery.SchemaField("impressions", "INT64"),
+    bigquery.SchemaField("profile_views", "INT64"),
+    bigquery.SchemaField("bio_link_clicks", "INT64"),
+    bigquery.SchemaField("created_at", "TIMESTAMP"),
+    bigquery.SchemaField("updated_at", "TIMESTAMP"),
+]
+
+POST_SNAPSHOT_SCHEMA = [
+    bigquery.SchemaField("snapshot_date", "DATE"),
+    bigquery.SchemaField("space_id", "STRING"),
+    bigquery.SchemaField("profile_id", "STRING"),
+    bigquery.SchemaField("profile_username", "STRING"),
+    bigquery.SchemaField("post_id", "STRING"),
+    bigquery.SchemaField("post_permalink", "STRING"),
+    bigquery.SchemaField("post_type", "STRING"),
+    bigquery.SchemaField("post_published_at", "TIMESTAMP"),
+    bigquery.SchemaField("reach_total", "INT64"),
+    bigquery.SchemaField("impressions_total", "INT64"),
+    bigquery.SchemaField("likes", "INT64"),
+    bigquery.SchemaField("comments", "INT64"),
+    bigquery.SchemaField("shares", "INT64"),
+    bigquery.SchemaField("saves", "INT64"),
+    bigquery.SchemaField("follows", "INT64"),
+    bigquery.SchemaField("profile_activity_total", "INT64"),
+    bigquery.SchemaField("bio_link_clicks", "INT64"),
+    bigquery.SchemaField("created_at", "TIMESTAMP"),
+]
+
+FOLLOWER_DEMOGRAPHICS_SCHEMA = [
+    bigquery.SchemaField("snapshot_date", "DATE"),
+    bigquery.SchemaField("space_id", "STRING"),
+    bigquery.SchemaField("profile_id", "STRING"),
+    bigquery.SchemaField("profile_username", "STRING"),
+    bigquery.SchemaField("age_group", "STRING"),
+    bigquery.SchemaField("gender", "STRING"),
+    bigquery.SchemaField("country", "STRING"),
+    bigquery.SchemaField("city", "STRING"),
+    bigquery.SchemaField("followers", "INT64"),
+    bigquery.SchemaField("created_at", "TIMESTAMP"),
+]
