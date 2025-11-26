@@ -21,7 +21,7 @@ SELECT
   CAST(NULL AS INT64) AS bio_link_clicks,
   CURRENT_TIMESTAMP() AS created_at,
   CURRENT_TIMESTAMP() AS updated_at
-WHERE FALSE;
+LIMIT 0;
 
 
 CREATE TABLE IF NOT EXISTS `${PROJECT_ID}.${DATASET}.sb_ig_post_daily_snapshots`
@@ -46,7 +46,7 @@ SELECT
   CAST(NULL AS INT64) AS profile_activity_total,
   CAST(NULL AS INT64) AS bio_link_clicks,
   CURRENT_TIMESTAMP() AS created_at
-WHERE FALSE;
+LIMIT 0;
 
 
 CREATE TABLE IF NOT EXISTS `${PROJECT_ID}.${DATASET}.sb_ig_follower_demographics`
@@ -63,4 +63,4 @@ SELECT
   "" AS city,
   CAST(NULL AS INT64) AS followers,
   CURRENT_TIMESTAMP() AS created_at
-WHERE FALSE;
+LIMIT 0;
