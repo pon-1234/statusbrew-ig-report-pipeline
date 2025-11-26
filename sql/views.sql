@@ -51,14 +51,14 @@ WITH post_avg AS (
 )
 SELECT
   FORMAT_DATE('%Y-%m', date) AS month,
-  profile_id,
-  profile_username,
-  ARRAY_AGG(followers ORDER BY date DESC LIMIT 1)[OFFSET(0)] AS followers_closing,
-  SUM(reach_total) AS reach_total_all,
-  SUM(reach_organic) AS reach_total_organic,
-  SUM(reach_paid) AS reach_total_paid,
-  SUM(profile_views) AS profile_views_total,
-  SUM(bio_link_clicks) AS hp_clicks_total,
+  base.profile_id,
+  base.profile_username,
+  ARRAY_AGG(base.followers ORDER BY date DESC LIMIT 1)[OFFSET(0)] AS followers_closing,
+  SUM(base.reach_total) AS reach_total_all,
+  SUM(base.reach_organic) AS reach_total_organic,
+  SUM(base.reach_paid) AS reach_total_paid,
+  SUM(base.profile_views) AS profile_views_total,
+  SUM(base.bio_link_clicks) AS hp_clicks_total,
   ANY_VALUE(post_avg.post_avg_reach) AS post_avg_reach
 FROM `${PROJECT_ID}.${DATASET}.sb_ig_profile_daily_metrics` base
 LEFT JOIN post_avg
